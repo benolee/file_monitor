@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+ARGV << '--help' if ARGV.empty?
+
+command = ARGV.shift
+
+case command
+when 'start'
+when 'stop'
+when '--version', '-v'
+else
+  puts 'Error: Command not recognized' unless %w(-h --help).include?(command)
+  puts <<-EOT
+Usage: file_monitor COMMAND [ARGS]
+
+The file monitor commands are:
+ start [DIR]    Starts the file monitor and watches a specified directory.
+ stop  [DIR]    Stops the file monitor
+ --version
+  EOT
+end
