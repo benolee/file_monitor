@@ -29,6 +29,6 @@ module FlexCorp
       end # start_monitor
     end # class
   end
- end
+end
 
 #Daemons.run_proc('file_daemon') { FlexCorp::FileMonitor::Worker.new.start_monitor } if __FILE__ == $0
