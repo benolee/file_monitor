@@ -1,6 +1,7 @@
 module FileMonitor
   class Configuration
-    attr_accessor :logfile_path
+
+    attr_accessor :logfile_path, :watch_dir
 
     def initialize *args
       options = args.last.is_a?(Hash) ? args.pop : {}
@@ -8,6 +9,7 @@ module FileMonitor
 
       config_content = YAML.load_file(config_path)
       @logfile_path = config_content['logfile']['path']
+      @watch_dir = config_content['monitor']['path'] || options[:watch_dir]
     end
 
   end

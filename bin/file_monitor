@@ -6,6 +6,7 @@ command = ARGV.shift
 
 case command
 when 'start'
+  require File.expand_path('../../lib/file_monitor', __FILE__)
 when 'stop'
 when '--version', '-v'
 else
@@ -15,7 +16,7 @@ Usage: file_monitor COMMAND [ARGS]
 
 The file monitor commands are:
  start [DIR]    Starts the file monitor and watches a specified directory.
- stop  [DIR]    Stops the file monitor
+ stop           Stops the file monitor
  --version
   EOT
 end
