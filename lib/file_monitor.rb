@@ -35,4 +35,4 @@ module FlexCorp
 
   end
 end
-Daemons.run_proc('file_daemon') { FlexCorp::FileMonitor.new.start_monitor } if __FILE__ == $0
+Daemons.run_proc('file_monitor') { FlexCorp::FileMonitor.new.start_monitor } if __FILE__ == $0
