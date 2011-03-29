@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'bundler/setup'
 
 # Standard libraries
 require 'logger'
@@ -7,12 +8,13 @@ require 'yaml'
 # Gem libraries
 require 'fssm'
 
-# FileMonitor libraries
+lib = File.expand_path('../', __FILE__)
+$:.unshift lib unless $:.include?(lib)
 
-require_relative 'file_monitor/configuration'
-require_relative 'file_monitor/logger'
-require_relative 'file_monitor/worker'
-require_relative 'file_monitor/initializer'
-
-watch_dir = ARGV.unshift
-FileMonitor.initialize!(:config_path => '/tmp/config.yml', :watch_dir => File.expand_path(File.join(watch_dir)))
+module FileMonitor
+  autoload :Core,              'file_monitor/core'
+  autoload :Configuration,     'file_monitor/configuration'
+  autoload :Logger,            'file_monitor/logger' # This should go away.. needs to be a hook
+  autoload :Worker,            'file_monitor/worker'
+  require 'file_monitor/hooks'
+end
