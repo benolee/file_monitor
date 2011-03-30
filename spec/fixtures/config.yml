@@ -1,5 +1,3 @@
-user: bob
-password: smith
 logfile:
   path: /tmp/file_monitor_log
 monitor:

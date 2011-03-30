@@ -14,7 +14,7 @@ describe FileMonitor::CommandLine do
 
     context "given a config path and a start/stop command" do
       it "should call FileMonitor::Core" do
-        FileMonitor::CommandLine.new ["--config-path", "/tmp/config.yml", "start", "/tmp/"]
+        FileMonitor::CommandLine.new ["--config-path", "/tmp/config.yml", "start"]
       end
     end
   end
