@@ -1,4 +1,6 @@
 user: bob
 password: smith
-path: 
-  - /tmp
+logfile:
+  path: /tmp/file_monitor_log
+monitor:
+  path: /tmp

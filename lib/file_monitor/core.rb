@@ -21,7 +21,7 @@ module FileMonitor
 
     def run
       _self = self
-      FSSM.monitor(config.watch_dir) do
+      FSSM.monitor(config.data["monitor"]["path"]) do
         update{|base, relative| _self.hook!(:update, base, relative) }
         delete{|base, relative| _self.hook!(:delete, base, relative) }
         create{|base, relative| _self.hook!(:create, base, relative) }
