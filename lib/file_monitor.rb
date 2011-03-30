@@ -13,6 +13,7 @@ $:.unshift lib unless $:.include?(lib)
 
 module FileMonitor
   autoload :Core,              'file_monitor/core'
+  autoload :CommandLine,       'file_monitor/command_line'
   autoload :Configuration,     'file_monitor/configuration'
   autoload :Logger,            'file_monitor/logger' # This should go away.. needs to be a hook
   autoload :Worker,            'file_monitor/worker'
