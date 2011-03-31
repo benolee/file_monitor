@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'bundler/setup'
 
 # Standard libraries
@@ -12,6 +11,7 @@ lib = File.expand_path('../', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
 module FileMonitor
+  autoload :Version,           'file_monitor/version'
   autoload :Core,              'file_monitor/core'
   autoload :CommandLine,       'file_monitor/command_line'
   autoload :Configuration,     'file_monitor/configuration'
